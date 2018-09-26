@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import store from "./store";
+import { connect } from "react-redux";
 import user from "./images/user.png";
 import "./App.css";
 import { setProfession } from "./actions";
@@ -21,12 +21,11 @@ class App extends Component {
     const randomProfession =
       professions[Math.floor(Math.random() * professions.length)];
     //dispatch action creator with random professions
-    store.dispatch(setProfession(randomProfession));
+    this.props.setProfession(randomProfession);
   };
 
   render() {
-    const { name, description, likes, location } = store.getState();
-    store.speak();
+    const { name, description, likes, location } = this.props;
     return (
       <div className="App">
         <section className="User__img">
@@ -63,4 +62,14 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({ name, location, likes, description }) => ({
+  name,
+  location,
+  likes,
+  description
+});
+
+export default connect(
+  mapStateToProps,
+  { setProfession }
+)(App);
