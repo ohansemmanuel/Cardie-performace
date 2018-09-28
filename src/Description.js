@@ -1,11 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
+import I from "./I";
+import Am from "./Am";
+import A from "./A";
+import Profession from "./Profession";
 
 const Description = ({ description }) => {
   return (
     <p>
-      {" "}
-      <span className="faint">I am</span> a {description}
+      <I />
+      <Am />
+      <A />
+      <Profession profession={description} />
     </p>
   );
 };
