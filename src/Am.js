@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class Am extends Component {
+class Am extends PureComponent {
   render() {
     console.log("render called in <Am/>");
     return <span className="faint">am </span>;
