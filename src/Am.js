@@ -1,7 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Am = () => {
-  return <span className="faint">am </span>;
-};
+class Am extends Component {
+  render() {
+    console.log("render called in <Am/>");
+    return <span className="faint">am </span>;
+  }
+}
 
 export default Am;

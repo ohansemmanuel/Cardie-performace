@@ -1,7 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Profession = ({ profession }) => {
-  return <span> {profession}</span>;
-};
+class Profession extends Component {
+  render() {
+    console.log("render called in <Profession/>");
+    return <span> {this.props.profession} </span>;
+  }
+}
 
 export default Profession;
