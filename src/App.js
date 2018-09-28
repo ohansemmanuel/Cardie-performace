@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import user from "./images/user.png";
 import "./App.css";
 import { setProfession } from "./actions";
-import Description from "./Description";
 
 class App extends Component {
   handleProfessionUpdate = () => {
@@ -26,7 +25,7 @@ class App extends Component {
   };
 
   render() {
-    const { name, likes, location } = this.props;
+    const { name, likes, location, description } = this.props;
     return (
       <div className="App">
         <section className="User__img">
@@ -34,7 +33,10 @@ class App extends Component {
         </section>
 
         <section className="User__info">
-          <Description />
+          <p>
+            {" "}
+            <span className="faint">I am</span> a {description}
+          </p>
           <p>
             {" "}
             <span className="faint">I like</span> {likes}
@@ -60,10 +62,11 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ name, location, likes }) => ({
+const mapStateToProps = ({ name, location, likes, description }) => ({
   name,
   location,
-  likes
+  likes,
+  description
 });
 
 export default connect(
