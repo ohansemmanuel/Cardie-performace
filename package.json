@@ -1,5 +1,5 @@
 {
-  "name": "cardie-with-persist",
+  "name": "cardie",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
