@@ -1,20 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import I from "./I";
 import Am from "./Am";
 import A from "./A";
 import Profession from "./Profession";
 
-const Description = ({ description }) => {
-  return (
-    <p>
-      <I />
-      <Am />
-      <A />
-      <Profession profession={description} />
-    </p>
-  );
-};
+class Description extends Component {
+  i = {
+    value: "i"
+  };
+
+  render() {
+    return (
+      <p>
+        <I i={this.i} />
+        <Am />
+        <A />
+        <Profession profession={this.props.description} />
+      </p>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   description: state.description
